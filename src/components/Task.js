@@ -1,10 +1,12 @@
+import { FaTimes } from 'react-icons/fa'
 
-import PropTypes from 'prop-types'
-
-const Task = () => {
+const Task = ({task, onDelete}) => {
     return (
-        <div className={`task ${task.reminder && 'reminder'}`}>
-            
+        <div className='task'>
+            <h3>{task.text}{' '} <FaTimes style={{ color:'ff0000', cursor: 'pointer' }} 
+                onClick={() => onDelete(task.id)} />
+            </h3>
+            <p>{task.day}</p>
         </div>
     )
 }
